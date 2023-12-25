@@ -15,7 +15,8 @@ int main( int argc, char *argv[] ) {
         return -1;
     } // if
 
-
+    // 回傳一個DIR類型的指標
+    // 若開啟失敗會為NULL
     dp = opendir( argv[1] );
     if ( dp !=  NULL )
         printf( "opendir sucess!\n" );
