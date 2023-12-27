@@ -33,7 +33,7 @@ int main( int argc, char *argv[] ) {
         // children process等2秒，等parent process結束後
         // 再印出children process的parent process的PID
         // 則此children process就會變成所謂的orphan process
-        // 他會被init process接管，ppid有可能為1或其他
+        // 他會被init process接管，ppid有可能為1，或是upstart process
         sleep( 2 );
         printf( "parent pid is : %d\n", getppid() );
     } // if
