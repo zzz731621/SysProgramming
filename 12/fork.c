@@ -10,7 +10,10 @@ int main( int argc, char *argv[] ) {
     pid_t pid;
     int a = 0;
     pid = fork();
-    // fork出的children process會從這以下執行，跟parent process擁有不一樣的記憶體空間
+    // fork出的children process會從這以下執行
+    // children process和parent process是採用Copy-on-write的策略
+    // 意思是如果有一方要對變數a修改時，會複製一個副本來保存修改後的值
+    // 之後要使用變數a的話，實際上都是使用變數a的那個副本
 
     // 若創建失敗則回傳-1
     if ( pid < 0 ) {
